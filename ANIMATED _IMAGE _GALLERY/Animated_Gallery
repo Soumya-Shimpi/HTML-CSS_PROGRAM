@@ -1,0 +1,72 @@
+# Animated Image Gallery
+
+An elegant and responsive animated image gallery built using **HTML** and **CSS**.  
+The gallery expands images smoothly on hover, creating an interactive and modern user experience.
+
+## 📌 Features
+
+- Smooth hover animation effect
+- Responsive flexbox layout
+- Modern UI design
+- Active image highlight
+- Pure HTML & CSS (No JavaScript)
+
+
+## 📂 Project Structure
+
+```bash
+project-folder/
+│
+├── index.html
+├── style.css
+└── README.md
+```
+
+## 🚀 Technologies Used
+
+- HTML5
+- CSS3
+- Flexbox
+- CSS Transitions
+
+## 📸 Preview
+
+The gallery displays multiple images in a horizontal layout.  
+When the user hovers over an image:
+
+- The hovered image expands
+- Other images shrink smoothly
+- Creates an animated gallery effect
+
+## 🎨 CSS Effects Used
+
+### Flexbox Layout
+
+```css
+display: flex;
+```
+
+### Smooth Animation
+
+```css
+transition: .5s;
+```
+
+### Hover Expansion
+
+```css
+.image-box:hover{
+    flex-basis: 25%;
+}
+```
+
+## 📱 Responsive Design
+
+The gallery uses flexible sizing with:
+
+- `flex-grow`
+- `flex-basis`
+- `object-fit: cover`
+
+This helps images adapt properly to different screen sizes.
+
