@@ -1,0 +1,131 @@
+
+/* ===== BODY BACKGROUND ANIMATION ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background: linear-gradient(
+    -45deg,
+    #f8f7ff,
+    #e9e4ff,
+    #dfe7fd,
+    #f5f3ff
+  );
+
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.style{
+    text-align: justify;
+    font-family: sans-serif;
+    
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===== CARD BASE ===== */
+.card {
+  width: 220px;
+  height: 150px;
+    margin: 4rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* fade in */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* hover lift */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* floating animation */
+.card {
+  animation: fadeUp 0.8s ease forwards, float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ===== GRADIENT OVERLAY ===== */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  transition: opacity 0.5s ease;
+
+  z-index: 0;
+}
+
+/* content above gradient */
+.card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* hover show gradient */
+.c1::before { background: linear-gradient(135deg, #89f7fe, #66a6ff); }
+.c2::before { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
+.c3::before { background: linear-gradient(135deg, #f12711, #f5af19); }
+
+.c1:hover::before,
+.c2:hover::before,
+.c3:hover::before {
+  opacity: 1;
+}
+
+/* slight glow */
+.c1:hover::before,
+.c2:hover::before,
+.c3:hover::before {
+  filter: blur(6px);
+  transform: scale(1.05);
+}
+
